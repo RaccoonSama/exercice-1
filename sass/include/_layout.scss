@@ -10,7 +10,8 @@ body {
     height : 100vh;
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
-    background-color: $test;
+    background-color: Couleur(primaire);
+    color: white;
 }
 
 body::after {
@@ -24,35 +25,35 @@ body::after {
     left: 0;
     right: 0;
     z-index: -1;
-    background-color: aqua;
+    background-color: rgb(0, 189, 164);
 }
 
 
 
 
-.entete{
-    grid-area: entete;
-}
-.annonce-1{
-    grid-area: announce-1;
-}
-.annonce-2{
-    grid-area: announce-2;
-}
-.principal{
-    grid-area: principal;
-}
-.pied-page{
-    grid-area: pied-page;
-}
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr ;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    gap: 20px 0px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0px 0px;
     grid-template-areas:
-      "entete entete entete "
-      "annonce-1 annonce-2 annonce-2 "
-      "principal l annonce-2 annonce-2 "
-      "pied-page pied-page pied-page";
+      "entete entete entete"
+      "principal annonce-2 annonce-2"
+      "pied-page pied-page pied-page"; 
   }
+  .entete { 
+      border: 2px solid blue;
+      grid-area: entete; 
+    }
+  .principal {
+    border: 2px solid green;
+       grid-area: principal; 
+    }
+  .annonce-2 { 
+    border: 2px solid black;
+      grid-area: annonce-2; 
+    }
+  .pied-page { 
+    border: 2px solid red;
+      grid-area: pied-page; 
+    }

@@ -8,6 +8,8 @@ body {
   height: 100vh;
   font-family: 'Montserrat', sans-serif;
   font-size: 12px;
+  background-color: #171e25;
+  color: white;
 }
 
 body::after {
@@ -22,36 +24,7 @@ body::after {
   left: 0;
   right: 0;
   z-index: -1;
-  background-color: aqua;
-}
-
-.entete {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
-  grid-area: entete;
-}
-
-.annonce-1 {
-  grid-area: announce-1;
-}
-
-.annonce-2 {
-  grid-area: announce-2;
-}
-
-.principal {
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
-  grid-area: principal;
-}
-
-.pied-page {
-  -ms-grid-row: 4;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
-  grid-area: pied-page;
+  background-color: #00bda4;
 }
 
 .grid-container {
@@ -59,9 +32,40 @@ body::after {
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
-  -ms-grid-rows: 1fr 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr 1fr;
-  gap: 20px 0px;
-      grid-template-areas: "entete entete entete " "annonce-1 annonce-2 annonce-2 " "principal principal annonce-2 " "pied-page pied-page pied-page";
+  -ms-grid-rows: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+      grid-template-areas: "entete entete entete" "principal annonce-2 annonce-2" "pied-page pied-page pied-page";
+}
+
+.entete {
+  border: 2px solid blue;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: entete;
+}
+
+.principal {
+  border: 2px solid green;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: principal;
+}
+
+.annonce-2 {
+  border: 2px solid black;
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: annonce-2;
+}
+
+.pied-page {
+  border: 2px solid red;
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: pied-page;
 }
 /*# sourceMappingURL=style.css.map */
