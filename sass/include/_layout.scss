@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+body {
+    width: 100vw;
+    height : 100vh;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    background-color: $test;
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    clip-path: polygon(0 0, 80% 0, 60% 100%, 0 100%);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    background-color: aqua;
+}
+
+
+
+
+.entete{
+    grid-area: entete;
+}
+.annonce-1{
+    grid-area: announce-1;
+}
+.annonce-2{
+    grid-area: announce-2;
+}
+.principal{
+    grid-area: principal;
+}
+.pied-page{
+    grid-area: pied-page;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 20px 0px;
+    grid-template-areas:
+      "entete entete entete "
+      "annonce-1 annonce-2 annonce-2 "
+      "principal l annonce-2 annonce-2 "
+      "pied-page pied-page pied-page";
+  }
