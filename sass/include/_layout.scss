@@ -52,6 +52,12 @@ body::after {
   .annonce-2 { 
     border: 2px solid black;
       grid-area: annonce-2; 
+      ul{
+        li{
+          list-style: none;
+          margin-top: 2rem;
+        }
+      }
     }
   .pied-page { 
     border: 2px solid red;
