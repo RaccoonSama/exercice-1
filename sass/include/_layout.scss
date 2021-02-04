@@ -34,7 +34,7 @@ body::after {
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 10rem 1fr 1fr;
     gap: 0px 0px;
     grid-template-areas:
       "entete entete entete"
@@ -42,6 +42,7 @@ body::after {
       "pied-page pied-page pied-page"; 
   }
   .entete { 
+    height: 10rem;
       border: 2px solid blue;
       grid-area: entete; 
     }
@@ -50,12 +51,15 @@ body::after {
        grid-area: principal; 
     }
   .annonce-2 { 
+    width: 40rem;
     border: 2px solid black;
       grid-area: annonce-2; 
+      border: 8px solid  rgb(4, 107, 93);
+      border-radius: 4%;
       ul{
         li{
           list-style: none;
-          margin-top: 2rem;
+          margin: 2rem;
         }
       }
     }

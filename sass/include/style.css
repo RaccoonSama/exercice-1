@@ -32,13 +32,14 @@ body::after {
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
-  -ms-grid-rows: 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr;
+  -ms-grid-rows: 10rem 1fr 1fr;
+      grid-template-rows: 10rem 1fr 1fr;
   gap: 0px 0px;
       grid-template-areas: "entete entete entete" "principal annonce-2 annonce-2" "pied-page pied-page pied-page";
 }
 
 .entete {
+  height: 10rem;
   border: 2px solid blue;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
@@ -54,16 +55,19 @@ body::after {
 }
 
 .annonce-2 {
+  width: 40rem;
   border: 2px solid black;
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   -ms-grid-column-span: 2;
   grid-area: annonce-2;
+  border: 8px solid #046b5d;
+  border-radius: 4%;
 }
 
 .annonce-2 ul li {
   list-style: none;
-  margin-top: 2rem;
+  margin: 2rem;
 }
 
 .pied-page {
