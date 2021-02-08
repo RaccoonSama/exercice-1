@@ -5,11 +5,15 @@
 
 body {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   font-family: 'Montserrat', sans-serif;
   font-size: 12px;
-  background-color: #171e25;
   color: white;
+  background: linear-gradient(60deg, #5f86f2, #a65ff2, #f25fd0, #f25f61, #f2cb5f, #abf25f, #5ff281, #5ff2f0);
+  background-size: 300% 300%;
+  background-position: 0 50%;
+  -webkit-animation: moveGradient 4s alternate infinite;
+          animation: moveGradient 4s alternate infinite;
 }
 
 body::after {
@@ -18,22 +22,23 @@ body::after {
   -webkit-clip-path: polygon(0 0, 80% 0, 60% 100%, 0 100%);
           clip-path: polygon(0 0, 80% 0, 60% 100%, 0 100%);
   width: 100%;
-  height: 100%;
+  height: 100vh;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: -1;
-  background-color: #00bda4;
+  background-color: #171e25;
 }
 
 .grid-container {
+  height: 100vh;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
-  -ms-grid-rows: 10rem 1fr 1fr;
-      grid-template-rows: 10rem 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
   gap: 0px 0px;
       grid-template-areas: "entete entete entete" "principal annonce-2 annonce-2" "pied-page pied-page pied-page";
 }
@@ -55,19 +60,10 @@ body::after {
 }
 
 .annonce-2 {
-  width: 40rem;
-  border: 2px solid black;
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   -ms-grid-column-span: 2;
   grid-area: annonce-2;
-  border: 8px solid #046b5d;
-  border-radius: 4%;
-}
-
-.annonce-2 ul li {
-  list-style: none;
-  margin: 2rem;
 }
 
 .pied-page {
@@ -76,5 +72,65 @@ body::after {
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-area: pied-page;
+}
+
+.entete {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.entete ul {
+  display: inherit;
+  list-style: none;
+  border: 1px solid blue;
+  margin-left: 40%;
+}
+
+.entete ul li {
+  border: solid 1px green;
+  margin: 0 2rem 0;
+}
+
+.annonce-2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 40%;
+  border: 2px solid black;
+  border: 8px solid #046b5d;
+  border-radius: 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.annonce-2 ul {
+  border: 1px solid green;
+}
+
+.annonce-2 ul li {
+  font-size: 1.2rem;
+  list-style: none;
+  margin: 2rem;
+}
+
+@-webkit-keyframes moveGradient {
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes moveGradient {
+  50% {
+    background-position: 100% 50%;
+  }
 }
 /*# sourceMappingURL=style.css.map */

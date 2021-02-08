@@ -7,39 +7,58 @@
 
 body {
     width: 100vw;
-    height : 100vh;
+    height : 100%;
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
-    background-color: Couleur(primaire);
     color: white;
-}
+   
+      background: linear-gradient(
+        60deg,
+        hsl(224, 85%, 66%),
+        hsl(269, 85%, 66%),
+        hsl(314, 85%, 66%),
+        hsl(359, 85%, 66%),
+        hsl(44, 85%, 66%),
+        hsl(89, 85%, 66%),
+        hsl(134, 85%, 66%),
+        hsl(179, 85%, 66%)
+      );
+      background-size: 300% 300%;
+      background-position: 0 50%;
+      
+      animation: moveGradient 4s alternate infinite;
+  }
+
 
 body::after {
     content: "";
     position: absolute;
     clip-path: polygon(0 0, 80% 0, 60% 100%, 0 100%);
     width: 100%;
-    height: 100%;
+    height: 100vh;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     z-index: -1;
-    background-color: rgb(0, 189, 164);
+    background-color: Couleur(primaire);
 }
 
 
 
 
+
 .grid-container {
+  height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 10rem 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     gap: 0px 0px;
     grid-template-areas:
       "entete entete entete"
       "principal annonce-2 annonce-2"
       "pied-page pied-page pied-page"; 
+    
   }
   .entete { 
     height: 10rem;
@@ -51,19 +70,47 @@ body::after {
        grid-area: principal; 
     }
   .annonce-2 { 
-    width: 40rem;
-    border: 2px solid black;
+   
       grid-area: annonce-2; 
-      border: 8px solid  rgb(4, 107, 93);
-      border-radius: 4%;
-      ul{
+     
+    }
+
+  .pied-page { 
+    border: 2px solid red;
+      grid-area: pied-page; 
+    }
+
+    .entete {
+      display: flex;
+      flex-direction: row;
+     
+      ul {
+        display: inherit;
+        list-style: none;
+        border: 1px solid blue;
+        margin-left: 40%;
         li{
+          border: solid 1px green;
+          margin: 0 2rem 0;
+        }
+      }
+    }
+
+    .annonce-2{
+      display: flex;
+      width: 40%;
+      border: 2px solid black;
+      border: 8px solid  rgb(4, 107, 93);
+      border-radius: 10px;
+      justify-content: center;
+      align-items: center;
+      ul{
+        border: 1px solid green;
+        li{
+
+          font-size: 1.2rem;
           list-style: none;
           margin: 2rem;
         }
       }
-    }
-  .pied-page { 
-    border: 2px solid red;
-      grid-area: pied-page; 
     }
