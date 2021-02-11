@@ -45,7 +45,6 @@ body::after {
 
 .entete {
   height: 10rem;
-  border: 2px solid blue;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
@@ -53,7 +52,6 @@ body::after {
 }
 
 .principal {
-  border: 2px solid green;
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: principal;
@@ -67,7 +65,6 @@ body::after {
 }
 
 .pied-page {
-  border: 2px solid red;
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
@@ -87,13 +84,25 @@ body::after {
 .entete ul {
   display: inherit;
   list-style: none;
-  border: 1px solid blue;
-  margin-left: 40%;
+  margin-left: 15%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .entete ul li {
-  border: solid 1px green;
+  height: 20%;
   margin: 0 2rem 0;
+  font-size: 1.1rem;
+}
+
+.logo {
+  margin-left: 1%;
+  width: 20%;
+}
+
+.logo img {
+  width: 100%;
 }
 
 .annonce-2 {
@@ -102,7 +111,7 @@ body::after {
   display: flex;
   width: 40%;
   border: 2px solid black;
-  border: 8px solid #046b5d;
+  border: 8px solid #14eed1;
   border-radius: 10px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -113,13 +122,58 @@ body::after {
 }
 
 .annonce-2 ul {
-  border: 1px solid green;
+  overflow: hidden;
 }
 
 .annonce-2 ul li {
   font-size: 1.2rem;
   list-style: none;
   margin: 2rem;
+}
+
+.principal {
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.principal div {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 5%;
+}
+
+.pied-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.pied-page div {
+  margin-bottom: 2%;
+  margin-left: 1%;
+}
+
+@media only screen and (max-width: 1200px) {
+  .grid-container {
+    border: teal solid 1px;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+        grid-template-areas: "entete entete entete" "principal principal principal" "annonce-2 annonce-2 annonce-2" "pied-page pied-page pied-page";
+  }
 }
 
 @-webkit-keyframes moveGradient {
@@ -131,6 +185,93 @@ body::after {
 @keyframes moveGradient {
   50% {
     background-position: 100% 50%;
+  }
+}
+
+.annonce-2 ul li {
+  -webkit-animation: animEntete 1s both;
+          animation: animEntete 1s both;
+}
+
+@-webkit-keyframes animEntete {
+  0% {
+    -webkit-transform: translateX(-1000px);
+            transform: translateX(-1000px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes animEntete {
+  0% {
+    -webkit-transform: translateX(-1000px);
+            transform: translateX(-1000px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+.annonce-2 li:nth-last-of-type(1) {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+.annonce-2 li:nth-last-of-type(2) {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.annonce-2 li:nth-last-of-type(3) {
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+
+.annonce-2 li:nth-last-of-type(4) {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+.annonce-2 li:nth-last-of-type(5) {
+  -webkit-animation-delay: 2.5s;
+          animation-delay: 2.5s;
+}
+
+.principal div {
+  -webkit-animation: hoverRabais 4s both infinite;
+          animation: hoverRabais 4s both infinite;
+}
+
+@-webkit-keyframes hoverRabais {
+  0% {
+    -webkit-transform: translateY(-25px);
+            transform: translateY(-25px);
+  }
+  50% {
+    -webkit-transform: translateY(25px);
+            transform: translateY(25px);
+  }
+  100% {
+    -webkit-transform: translateY(-25px);
+            transform: translateY(-25px);
+  }
+}
+
+@keyframes hoverRabais {
+  0% {
+    -webkit-transform: translateY(-25px);
+            transform: translateY(-25px);
+  }
+  50% {
+    -webkit-transform: translateY(25px);
+            transform: translateY(25px);
+  }
+  100% {
+    -webkit-transform: translateY(-25px);
+            transform: translateY(-25px);
   }
 }
 /*# sourceMappingURL=style.css.map */

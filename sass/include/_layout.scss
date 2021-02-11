@@ -58,15 +58,15 @@ body::after {
       "entete entete entete"
       "principal annonce-2 annonce-2"
       "pied-page pied-page pied-page"; 
-    
+  
   }
   .entete { 
     height: 10rem;
-      border: 2px solid blue;
+    //  border: 2px solid blue;
       grid-area: entete; 
     }
   .principal {
-    border: 2px solid green;
+  //  border: 2px solid green;
        grid-area: principal; 
     }
   .annonce-2 { 
@@ -76,7 +76,7 @@ body::after {
     }
 
   .pied-page { 
-    border: 2px solid red;
+   // border: 2px solid red;
       grid-area: pied-page; 
     }
 
@@ -87,12 +87,22 @@ body::after {
       ul {
         display: inherit;
         list-style: none;
-        border: 1px solid blue;
-        margin-left: 40%;
+        //border: 1px solid blue;
+        margin-left: 15%;
+        align-items: center;
         li{
-          border: solid 1px green;
+          height: 20%;
+          // border: solid 1px green;
           margin: 0 2rem 0;
+          font-size: 1.1rem;
         }
+      }
+    }
+    .logo {
+      margin-left: 1%;
+      width: 20%;
+      img {
+        width: 100%;
       }
     }
 
@@ -100,17 +110,56 @@ body::after {
       display: flex;
       width: 40%;
       border: 2px solid black;
-      border: 8px solid  rgb(4, 107, 93);
+      border: 8px solid  rgb(20, 238, 209);
       border-radius: 10px;
       justify-content: center;
       align-items: center;
       ul{
-        border: 1px solid green;
+        overflow: hidden;
         li{
-
+        
           font-size: 1.2rem;
           list-style: none;
           margin: 2rem;
         }
+      }
+    }
+
+    .principal {
+      display: grid;
+      //border: hotpink 1px solid;
+      align-content: center;
+      div {
+        //border: springgreen 1px solid;
+        text-align: center;
+        font-size: 2rem;
+        margin-top: 5%;
+      
+      }
+      
+    }
+
+    .pied-page {
+      display: flex;
+      justify-content: flex-end;
+      flex-direction: column;
+      div{
+        margin-bottom: 2%;
+        margin-left: 1%;
+      }
+    }
+
+    @media only screen and (max-width: 1200px) {
+      .grid-container{
+        border: teal solid 1px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+      gap: 0px 0px;
+      grid-template-areas:
+        "entete entete entete"
+        "principal principal principal"
+        "annonce-2 annonce-2 annonce-2"
+        "pied-page pied-page pied-page"; 
       }
     }
