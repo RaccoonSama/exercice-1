@@ -164,15 +164,54 @@ body::after {
 
 @media only screen and (max-width: 1200px) {
   .grid-container {
-    border: teal solid 1px;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     -ms-grid-rows: 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr;
     gap: 0px 0px;
-        grid-template-areas: "entete entete entete" "principal principal principal" "annonce-2 annonce-2 annonce-2" "pied-page pied-page pied-page";
+        grid-template-areas: "entete entete entete entete" "principal principal . ." "annonce-2 annonce-2 . ." "pied-page pied-page pied-page pied-page";
+  }
+  .principal {
+    margin-left: 25%;
+    margin-bottom: 10%;
+  }
+  .annonce-2 {
+    width: 100%;
+    background-color: #171e25;
+    margin-left: 10%;
+  }
+  .entete {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .entete ul {
+    width: 80%;
+    margin-left: 0;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .logo {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .logo {
+    border: 1px solid red;
+    width: 70%;
+  }
+  .principal {
+    margin-top: 15%;
+  }
+  .principal h2 {
+    font-size: 2.1rem;
   }
 }
 
