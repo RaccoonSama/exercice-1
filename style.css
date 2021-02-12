@@ -1,0 +1,223 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  color: white;
+  background: linear-gradient(60deg, #5f86f2, #a65ff2, #f25fd0, #f25f61, #f2cb5f, #abf25f, #5ff281, #5ff2f0);
+  background-size: 300% 300%;
+  background-position: 0 50%;
+  animation: moveGradient 4s alternate infinite;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  clip-path: polygon(0 0, 80% 0, 60% 100%, 0 100%);
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  background-color: #171e25;
+}
+
+.grid-container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas: "entete entete entete" "principal annonce-2 annonce-2" "pied-page pied-page pied-page";
+}
+
+.entete {
+  height: 10rem;
+  grid-area: entete;
+}
+
+.principal {
+  grid-area: principal;
+}
+
+.annonce-2 {
+  grid-area: annonce-2;
+}
+
+.pied-page {
+  grid-area: pied-page;
+}
+
+.entete {
+  display: flex;
+  flex-direction: row;
+}
+
+.entete ul {
+  display: inherit;
+  list-style: none;
+  margin-left: 15%;
+  align-items: center;
+}
+
+.entete ul li {
+  height: 20%;
+  margin: 0 2rem 0;
+  font-size: 1.1rem;
+}
+
+.logo {
+  margin-left: 1%;
+  width: 20%;
+}
+
+.logo img {
+  width: 100%;
+}
+
+.annonce-2 {
+  display: flex;
+  width: 40%;
+  border: 2px solid black;
+  border: 8px solid #14eed1;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.annonce-2 ul {
+  overflow: hidden;
+}
+
+.annonce-2 ul li {
+  font-size: 1.2rem;
+  list-style: none;
+  margin: 2rem;
+}
+
+.principal {
+  display: grid;
+  align-content: center;
+}
+
+.principal div {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 5%;
+}
+
+.pied-page {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
+.pied-page div {
+  margin-bottom: 2%;
+  margin-left: 1%;
+}
+
+@media only screen and (max-width: 1200px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas: "entete entete entete entete" "principal principal . ." "annonce-2 annonce-2 . ." "pied-page pied-page pied-page pied-page";
+  }
+  .principal {
+    margin-left: 25%;
+    margin-bottom: 10%;
+  }
+  .annonce-2 {
+    width: 100%;
+    background-color: #171e25;
+    margin-left: 10%;
+  }
+  .entete {
+    display: flex;
+    flex-direction: column;
+  }
+  .entete ul {
+    width: 80%;
+    margin-left: 0;
+    flex-wrap: wrap;
+  }
+  .logo {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .logo {
+    width: 70%;
+  }
+  .principal {
+    margin-top: 15%;
+  }
+  .principal h2 {
+    font-size: 2.1rem;
+  }
+}
+
+@keyframes moveGradient {
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.annonce-2 ul li {
+  animation: animEntete 1s both;
+}
+
+@keyframes animEntete {
+  0% {
+    transform: translateX(-1000px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.annonce-2 li:nth-last-of-type(1) {
+  animation-delay: 0.5s;
+}
+
+.annonce-2 li:nth-last-of-type(2) {
+  animation-delay: 1s;
+}
+
+.annonce-2 li:nth-last-of-type(3) {
+  animation-delay: 1.5s;
+}
+
+.annonce-2 li:nth-last-of-type(4) {
+  animation-delay: 2s;
+}
+
+.annonce-2 li:nth-last-of-type(5) {
+  animation-delay: 2.5s;
+}
+
+.principal div {
+  animation: hoverRabais 4s both infinite;
+}
+
+@keyframes hoverRabais {
+  0% {
+    transform: translateY(-25px);
+  }
+  50% {
+    transform: translateY(25px);
+  }
+  100% {
+    transform: translateY(-25px);
+  }
+}
