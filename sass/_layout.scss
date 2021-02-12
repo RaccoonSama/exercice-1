@@ -189,7 +189,6 @@ body::after {
 
     @media only screen and (max-width: 500px) {
       .logo {
-        border:1px solid red;
         width: 70%;
       }
       .principal {
@@ -198,4 +197,5 @@ body::after {
           font-size: 2.1rem;
         }
       }
-    }
+     
+  }
