@@ -35,7 +35,9 @@ body::after {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   gap: 0px 0px;
-  grid-template-areas: "entete entete entete" "principal annonce-2 annonce-2" "pied-page pied-page pied-page";
+  grid-template-areas: "entete entete entete"
+ "principal annonce-2 annonce-2"
+ "pied-page pied-page pied-page";
 }
 
 .entete {
@@ -130,7 +132,10 @@ body::after {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     gap: 0px 0px;
-    grid-template-areas: "entete entete entete entete" "principal principal . ." "annonce-2 annonce-2 . ." "pied-page pied-page pied-page pied-page";
+    grid-template-areas: "entete entete entete entete"
+ "principal principal . ."
+ "annonce-2 annonce-2 . ."
+ "pied-page pied-page pied-page pied-page";
   }
   .principal {
     margin-left: 25%;
